@@ -1,0 +1,57 @@
+%inputStyle {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    padding: 5px;
+
+    &:focus {
+        outline: 1px solid $textColor;
+    }
+}
+
+.form-container {
+    max-width: 450px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #eee;
+
+    &__title {
+        color: $textColor;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .form {
+        &__label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: .9rem;
+            color: $textColor;
+        }
+
+        &__input {
+            @extend %inputStyle;
+        }
+
+        &__textarea {
+            @extend %inputStyle;
+            height: 100px;
+            resize: none;
+        }
+
+        &__select {
+            @extend %inputStyle;
+        }
+
+        &__submit {
+            @extend %inputStyle;
+            transition: .2s;
+
+            &:hover {
+                background-color: rgb(204, 204, 204);
+            }
+        }
+    }
+}

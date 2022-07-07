@@ -1,0 +1,108 @@
+$redColor:  rgb(216, 47, 47);
+$orangeColor: rgb(226, 223, 41);
+$greenColor: rgb(12, 161, 32);
+
+%statuses {
+    display: inline-block;
+    color: #fff;
+    font-size: .8rem;
+    margin: 0 5px 10px 0;
+    padding: 2px 8px;
+    border-radius: 5px;
+} 
+
+%btn {
+    display: inline-block;
+    color: #fff;
+    margin: 0 5px 10px 0;
+    padding: 4px 12px;
+    border-radius: 5px;
+    border: none;
+    transition: .2s;
+} 
+
+.task_done {
+    opacity: .5;
+}
+
+.task {
+    padding: 20px;
+    margin: 20px auto;
+    border: 1px solid #eee;
+
+    &__title {
+        color: $textColor;
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+        word-wrap: break-all;
+        word-break: break-all;
+    }
+
+    &__status {
+        @extend %statuses;
+        background-color: rgb(69, 120, 230);
+    }
+
+        .task__status_done{
+            @extend %statuses;
+            background-color: rgb(65, 65, 65);
+        }
+
+    &__priority {
+        @extend %statuses;
+    }
+
+        .task__priority_low {
+            background-color: $greenColor;
+        }
+
+        .task__priority_medium {
+            background-color: $orangeColor;
+        }
+
+        .task__priority_high {
+            background-color:$redColor;
+        }
+
+    &__assign {
+        display: inline-block;
+        word-wrap: break-all;
+        word-break: break-all;
+
+        &:before {
+            content: url(../icons/profile.svg);
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            margin-right: 3px;
+            vertical-align: middle;
+        }
+    }
+
+    &__description {
+        margin-bottom: 10px;
+        word-wrap: break-all;
+        word-break: break-all;
+    }
+
+    &__btn {
+        @extend %btn;
+    }
+
+    &__btn-done  {
+        background-color: $greenColor;
+
+        &:hover {
+            background-color: rgb(5, 129, 1);
+        }
+    }
+
+    &__btn-delete {
+        background-color: $redColor;
+
+        &:hover {
+            background-color: rgb(192, 2, 2);
+        }
+    }
+
+}
